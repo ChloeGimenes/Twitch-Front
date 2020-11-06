@@ -84,7 +84,7 @@ function Sidebar(){
 
     return (
         <div className="sidebar">
-            <h2 className="titreSidebar">Recommanded chanels</h2>
+            <h2 className="titreSidebar">Recommended chanels</h2>
             <ul className="listeStream">
                 
                 {topStreams.map((stream,index) => (
