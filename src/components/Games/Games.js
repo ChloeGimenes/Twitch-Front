@@ -39,7 +39,7 @@ function Games () {
     return ( 
         <div>
             <SideBar />
-            <h1 className="titreGames">Jeux les plus populaires</h1>
+            <h1 className="titreGames">Popular games</h1>
             <div className="flexAccueil">
                 {games.map((game, index) => (
 

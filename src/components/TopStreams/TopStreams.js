@@ -91,7 +91,7 @@ function TopStreams () {
 
         <div>
             <SideBar />
-           <h1 className="titreGames">Stream les plus populaires</h1>
+           <h1 className="titreGames">Popular streams</h1>
            
             <div className="flexAccueil">
 

@@ -6,7 +6,7 @@ function Erreur(){
 
     return(
             <div className="containerDecaleResultats">
-                <h4>Résultats de recherche: Pas de résultats, <br /> Vérifiez l'orthographe de votre saisie, ou ce streamer n'éxiste pas.</h4>
+                <h4>Sorry, we can't find this stream. <br /></h4>
             </div>
     )
 }

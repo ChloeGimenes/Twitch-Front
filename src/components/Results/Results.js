@@ -37,7 +37,7 @@ function Results() {
         <div>
            
             <div className="containerDecaleResultats">
-                <h4>Résultats de recherche : </h4>
+                <h4>Results : </h4>
 
                 {streamerInfo.map((stream,index) => (
 
@@ -56,7 +56,7 @@ function Results() {
                                 pathname: `/live/${stream.login}`
                             }}
                             >
-                                <div className="btnCarte btnResult">Regarder {stream.display_name}</div>
+                                <div className="btnCarte btnResult">Watch {stream.display_name}</div>
                             </Link>
                         </div>
                     </div>

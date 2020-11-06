@@ -82,7 +82,7 @@ function Header(){
                     <li className="liensNav">
                         <form className="formSubmit" onSubmit={handleSubmit}>
 
-                            <input id="input-header" required placeholder="Find a streamer..." value={searchInput} onChange={(e) => handleKeyPress(e)} type="text" className="inputRecherche"/>
+                            <input id="input-header" required placeholder="Find a stream..." value={searchInput} onChange={(e) => handleKeyPress(e)} type="text" className="inputRecherche"/>
 
                         <Link
                         className="lien"
