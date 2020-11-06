@@ -1,38 +1,1037 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Globally remove blue links on click */
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: #f1f1f1;
+  font-family: 'Montserrat', sans-serif;;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*/////////////////////////////////////////
+PARTIE HEADER 
+/////////////////////////////////////////*/
+#input-header {
+  color: grey;
+  font-family: 'Montserrat';
+}
+
+.headerTop {
+  /* background: #6441a4; */
+  background: rgb(2,0,36);
+  background: linear-gradient(270deg, rgba(2,0,36,1) 25%, rgba(128,62,180,1) 71%, rgba(179,151,209,1) 100%);
+
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.listeMenu {
+  list-style-type: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.liensNav {
+  list-style-type: none;
+  padding: 0 20px;
+}
+.liensNav:nth-child(4) {
+  margin: 0 auto;
+  flex-shrink: 1;
+  width: 600px;
+}
+.lien {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+.lien:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  /* transition: all 0.4s ease 0s; */
+  
+}
+
+.list-item-log {
+display: flex;
+}
+
+#lien-log {
+  margin-left: 30px;
+}
+
+.logo {
+  margin-top: 5px;
+}
+.formSubmit {
+  display: flex;
+  /* flex-shrink: 1; */
+  justify-content: center;
+  margin: 10px;
+}
+.logoLoupe {
+  width: 20px;
+}
+.inputRecherche {
+  padding-left: 15px;
+  width: 50%;
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.liensNav button {
+  cursor: pointer;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 4px 20px;
+  border: none;
+  background-color: #e3e3f1;
+}
+
+.menuResBtn {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.menuIco {
+  width: 25px;
+}
+
+#contact {
+margin-right: 45px;
+}
+
+@media screen and (max-width: 950px) {
+  .liensNav:nth-child(4) {
+    width: 550px;
+  }
+}
+@media screen and (max-width: 900px) {
+  #contact {
+    margin: 0;
+  }
+  .listeMenu {
+    flex-direction: column;
+    height: 300px;
+    padding-top: 50px;
+  }
+
+  .liensNav {
+    height: 100px;
+    /* background: #6441a4; */
+    background: rgb(2,0,36);
+    background: linear-gradient(270deg, rgba(2,0,36,1) 25%, rgba(128,62,180,1) 71%, rgba(179,151,209,1) 100%);
+  
+    width: 100%;
+  }
+
+  .liensNav:nth-child(4){
+    width: 100%!important;
+    padding: 10px 0px 10px 0;
+  }
+
+  .list-item-log {
+    display: flex;
+    flex-direction: column;
+    height: 90px;    
+  }
+
+
+
+  #lien-log {
+    margin-left: 0px;
+    margin-bottom: 8px;
+  }
+
+  .logo {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .formSubmit {
+    justify-content: center;
+  }
+  .menuResBtn {
+    display: block!important;
+    z-index: 1000;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*/////////////////////////////////////////
+PARTIE SIDEBAR
+/////////////////////////////////////////*/
+
+.lien2 {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+
+.sidebar {
+  position: fixed;
+  top: 50px;
+  width: 239px;
+  background: #36323b;
+  height: 100vh;
+}
+.titreSidebar {
+  padding: 30px 0 20px 0;
+  color: #efebf5;
+  font-size: 15px;
+  font-weight: 500;
+}
+.listeStream {
+  padding: 0 0 0 10px;
+  color: #efebf5;
+}
+
+.containerFlexSidebar {
+  padding: 10px 15px 8px 5px;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+}
+.containerFlexSidebar:hover {
+  background: rgba(255,255,255,0.2);
+}
+.profilePicRonde {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.streamUser {
+  color: #f1f1f1;
+  flex-basis: 50%;
+  overflow: hidden;
+  text-align: left;
+}
+.gameNameSidebar {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #aeabb6;
+  text-align: left;
+  margin-top: 5px;
+}
+.viewerRight {
+  color: #aeabb6;
+  flex-basis: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pointRouge {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: 6px;
+  margin-right: 3px;
+  background: crimson;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* 
+///////////////////////////////
+PARTIE GAMES
+///////////////////////////////
+*/
+
+.titreGames {
+  padding-top: 90px;
+  font-size: 50px;
+  font-weight: 300;
+  padding-left: 260px;
+  padding-bottom: 50px;
+}
+.flexAccueil {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 260px;
+}
+.cartesGames {
+  height: 480px;
+  width: 280px;
+  margin: 0 30px 30px 0;
+  position: relative;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 2px 11px 36px -16px rgba(0,0,0,0.75);
+}
+
+.cartesGames:hover {
+  transform: translateY(-5px);
+}
+
+.imgCarte {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.cardBodyGames {
+  height: 144px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.btnCarte {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #212529;
+  font-size: 14px;
+  line-height: 1.125;
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+.btnCarte:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.titreCartesGames {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width:80%;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+  .titreGames {
+    padding-left: 0px;
+  }
+  .flexAccueil {
+    padding-left: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .titreGames {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 559px) {
+
+  .cartesGames {
+    margin: 0 0 30px 0;
+  }
+  .flexAccueil{
+    padding-left: 0px;
+  }
+
+}
+
+
+/* 
+///////////////////////////////
+PARTIE TOPSTREAMS
+///////////////////////////////
+*/
+
+.carteStream {
+  height: 420px;
+  width: 320px;
+  margin: 0 30px 30px 0;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 2px 11px 36px -16px rgba(0,0,0,0.75);
+
+}
+
+.carteStream:hover {
+  transform: translateY(-5px);
+}
+
+.titreCartesStream {
+  font-size: 21px;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  width: 80%;
+  font-weight: 500;
+}
+.cardBodyStream {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.txtStream {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.viewers {
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 559px) {
+  .carteStream {
+    margin: 0 0 30px 0;
+  }
+}
+
+
+/* 
+///////////////////////////////
+PARTIE LIVE
+///////////////////////////////
+*/
+
+.containerDecale {
+  overflow-x: hidden;
+  padding-top: 50px;
+  padding-left: 239px;
+}
+.contInfo {
+  color: #19171c;
+  display: grid;
+  height: 156px;
+  width: calc(100% - 340px);
+  grid-template: repeat(3, 35px) / 1fr 1fr;
+  margin-top: 5px;
+}
+.titreStream {
+  grid-area: 1 / 1 / 2 / 3;
+  text-align: left;
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 20px;
+}
+.viewer {
+  grid-area: 1 / 2 / 2 / 3;
+  text-align: right;
+  color: crimson;
+  font-weight: 700;
+  margin: 3px 5px 0 0;
+}
+.infogame {
+  grid-area: 2 / 1 / 3 / 3;
+  text-align: left;
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 20px;
+}
+.nomJeu {
+  grid-area: 3 / 1 / 4 / 2;
+  text-align: left;
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .containerDecale {
+    padding-left: 0;
+  }
+  .contInfo{
+    width: calc(100%);
+  }
+  .viewer {
+    margin: 5px 25px 0 0;
+  }
+
+}
+
+@media screen and (max-width: 630px) {
+
+  .contInfo {
+    grid-template: 45px 35px 35px 35px / 1fr 1fr;
+  }
+  .titreStream {
+    font-size: 14px;
+  }
+  .nomJeu {
+    font-size: 14px;
+  }
+  .infogame {
+    font-size: 14px;
+  }
+  .viewer {
+    font-size: 14px;
+    margin: 0 0 0 5px;
+    grid-area: 4 / 1 / 5 / 2;
+    text-align: left;
+
+  }
+
+}
+
+/* 
+///////////////////////////////
+PARTIE GAMESTREAMS
+///////////////////////////////
+*/
+
+.titreGamesStreams {
+  padding-top: 100px;
+  font-size: 53px;
+  font-weight: 300;
+  padding-left: 260px;
+  padding-bottom: 10px;
+}
+.sousTitreGameStreams {
+  font-size: 25px;
+  font-weight: 300;
+  padding-left: 260px;
+  padding-bottom: 50px;
+}
+
+.textColored {
+  color: #6441a4;
+}
+
+.carteGameStreams {
+  height: 380px;
+  width: 320px;
+  margin: 0 30px 30px 0;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 2px 11px 36px -16px rgba(0,0,0,0.75);
+}
+.carteGameStreams:hover {
+  transform: translateY(-5px);
+}
+.cardBodyGameStreams {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+@media screen and (max-width:1200px) {
+  .titreGamesStreams {
+    padding-left: 0px;
+    font-size: 30px;
+  }
+  .sousTitreGameStreams {
+    font-size: 17px;
+    padding-left: 0px;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width:559px) {
+  .carteGameStreams {
+    margin: 0 0 30px 0;
+  }
+}
+
+
+
+/* 
+//////////////////////////////////////////
+PARTIE RESULTATS
+////////////////////////////////
+*/
+
+.containerDecaleResultats {
+  overflow-x: hidden;
+  padding-top: 50px;
+  padding-left: 239px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+.containerDecaleResultats h4 {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 24px;
+}
+.carteResultats {
+  height: 580px;
+  width: 350px;
+  margin-bottom: 35px;
+  position: relative;
+  transition: all 0.4s;
+  /* Proprietes bootstrap */
+  border-radius: 10px;
+  box-shadow: 2px 11px 36px -16px rgba(0,0,0,0.75);
+  margin-top: 20px;
+}
+.cardBodyResults {
+  height: 230px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cardBodyResults .btnCarte{
+  align-self: flex-end;
+}
+
+.txtResult {
+  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
+}
+.btnResult {
+  background: rgb(255, 191, 0);
+  color: #000;
+  font-size: 17px;
+}
+.btnResult:hover {
+  color: #000;
+}
+
+/* Custom */
+@media screen and (max-width:1200px) {
+  .containerDecaleResultats {
+  
+    overflow-x: hidden;
+    padding-top: 0px;
+    padding-left: 0px;
+
+  }
+  .containerDecaleResultats h4 {
+    padding-top: 100px;
+  }
+
+}
+@media screen and (max-width:600px) {
+  .containerDecaleResultats h4 {
+
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+  .carteResultats {
+    height: 580px;
+    width: 300px;
+
+  }
+}
+.spanTxt {
+  color: #000!important;
+}
+.titreResultats {
+ padding-top: 50px;
+}
+
+
+
+/*//////////PARTIE CONTACT//////*/
+
+.title-contact {
+  font-family: 'Lobster', cursive;
+  font-size: 55px;
+}
+
+.logo3 {
+  margin-top: 25%;
+  height: 30%;
+  margin-left: 25%;
+  margin-top: 47%;
+}
+
+.container-form-main {
+  overflow: hidden;
+  
+}
+
+.contact-text {
+  margin: 70px;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  line-height: 3;
+  
+}
+.contact-text-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.container-form {
+  width: auto;
+  height: 100vh;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-image: url(./pictures/landscape.jpg);
+  background-size: cover;
+  opacity: 0.9;
+}
+
+
+
+.contactform {
+  background-color: #ffffff;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 650px;
+  width: 700px;
+  margin-top: 150px;
+  margin-bottom: 15px;
+}
+
+
+.contactform input {
+  font-family: 'Montserrat';
+  display: flex;
+  outline: none;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  color: #000000;
+  width: 70%;
+  margin: 10px;
+  margin-top: 30px;
+  padding: 10px;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #000000;
+  
+}
+
+.contactform textarea {
+  display: flex;
+  background: transparent;
+  outline: none;
+  border: 0;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  height: 100px;
+  width: 70%;
+  resize: none;
+  padding: 10px;
+  margin: 20px;
+  outline: 0;
+  background: transparent;
+  border: 1px solid #070707;
+  font-family: 'Montserrat';
+   font-size: 18px;
+}
+
+textarea::placeholder {
+   font-family: 'Montserrat';
+   font-size: 18px;
+}
+
+.button-send {
+  color: rgb(0, 0, 0);
+  border-color:  #000000;
+  padding: 15px 35px 15px 35px;
+  font-size: 20px;
+  margin: 15px;
+  transition: all .1s ease-in;
+  border-radius: 40px;
+  font-family: 'Lobster', cursive;
+}
+
+/* .buttons-container {
+    margin-bottom: 25%;
+} */
+
+.button-send:hover {
+  cursor: pointer;
+  background-color: #6441a4;
   color: white;
+  border-color: #6441a4;
+
+}
+.container-warning {
+  background-color: rgb(255, 255, 255);
+  margin-top: 100px;
+  margin-bottom: 130px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+button:focus {outline:0;}
+input:focus,
+textarea:focus,
+select:focus {
+  outline-offset: 0px !important;
+  outline: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Change autocomplete styles in WebKit //////////////////////////*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+-webkit-text-fill-color: rgb(15, 15, 15);
+-webkit-box-shadow: 0 0 0px 1000px #f1f1f1 inset;
+
+}
+
+
+
+/* MEDIA QUERIES ///*/
+
+@media only screen and (max-width: 900px) {
+
+.contactform {
+  margin-top: 100px;
+  width: 600px;
+  height: auto;
+ 
+}
+
+}
+
+@media screen and (max-width:559px) {
+
+.contactform {
+  width: 95%;
+  height: auto;
+}
+
+.container-form {
+ 
+}
+
+.contactform input {
+  padding: 0;
+  padding: 5%;
+  font-size: 17px;
+}
+
+.contactform textarea {
+width: 70%;
+padding: 5%;
+margin: 30px;
+font-size: 17px;
+
+
+}
+
+.logo3 {
+  height: 170px;
+  margin-left: 60%;
+  
+}
+
+.button-send {
+padding: 15px;
+}
+}
+
+
+/*/////// WISH LIST ////////////////////////////////////*/
+
+.WishList {
+  /* background-image: url('./pictures//galaxy.jpg'); */
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(110,109,161,1) 71%, rgba(170,177,182,0.8519782913165266) 100%);
+  background-repeat: no-repeat;
+  background-size: cover
+  ;
+}
+
+.nowish {
+
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+.titreGamesWish {
+  padding-top: 20px;
+  font-size: 55px;
+  padding-bottom: 50px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 7px;
+}
+
+.subtitreGamesWish {
+  padding-top: 65px;
+  font-size: 40px;
+  padding-bottom: 50px;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 7px;
+}
+
+.cartesGamesWish {
+  background-color: #ffffff;
+  height: 480px;
+  width: 280px;
+  margin: 0 30px 30px 0;
+  position: relative;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 2px 11px 36px -16px rgba(0,0,0,0.75);
+}
+
+.cartesGamesWish:hover {
+  transform: translateY(-5px);
+}
+
+
+.titreCartesGamesName {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width:80%;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 20px;
+  color: #6441a4
+}
+.titreCartesGamesPrice {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width:80%;
+  overflow: hidden;
+  font-weight: 800;
+  font-size: 17px;
+  color: #6441a4
+}
+
+.button-add {
+
+color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: rgb(98, 158, 98);
+padding: 10px;
+border-radius: 50px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+font-weight: 800;
+}
+
+.button-add:hover,
+.button-remove:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
   }
-  to {
-    transform: rotate(360deg);
+
+  .button-remove {
+
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: rgb(224, 108, 72);
+    padding: 10px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    font-weight: 800;
+    }
+/* .card--icon {
+	color: #781818;
+	margin-right: 1rem;
+}
+.card--icon:hover {
+	cursor: pointer;
+}
+.card--icon__not {
+	color: white;
+	margin-right: 1rem;
+}
+.card--icon__not:hover {
+	cursor: pointer;
+} */
+
+/*/ SIGN OUT */
+
+.signout-text {
+  margin-top: 20%;
+  color: #6441a4;
+}
+
+.logo2 {
+  margin-top: 10%;
+}
+
+.logo-cat {
+  margin-top: 8%;
+  height: 150px;
+}
+
+/*/SIGN IN */
+
+.form-title {
+margin-top: 10%;
+}
+
+.btn {
+  color: white;
+  background-color: #6441a4
+
+}
+
+@media screen and (max-width:559px) {
+
+  .logo2 {
+    width: 50%;
+    margin-top: 30%
   }
+}
+
+/*/////////// SIGN UP ///////////*/
+
+.error {
+  color: red;
 }
