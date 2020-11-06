@@ -116,15 +116,16 @@ class Contact extends Component {
               >
                 Submit
               </button>
+            </div>
 
-              <Recaptcha
+            <Recaptcha
                 sitekey={process.env.REACT_APP_RECAPTCHA}
                 render="explicit"
                 onloadCallback={this.recaptchaLoaded.bind(this)}
                 verifyCallback={this.verifyCallback.bind(this)}
-                theme="dark"
+                
               />
-            </div>
+
           </div>
         </form>
       </div>
