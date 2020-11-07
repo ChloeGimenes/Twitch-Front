@@ -685,7 +685,7 @@ PARTIE RESULTATS
 }
 
 .container-form-main {
-  overflow: hidden;
+  
   
 }
 
@@ -743,7 +743,7 @@ PARTIE RESULTATS
   padding: 10px;
   outline: 0;
   background: transparent;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #7e7e7e;
   
 }
 
@@ -761,7 +761,7 @@ PARTIE RESULTATS
   margin: 20px;
   outline: 0;
   background: transparent;
-  border: 1px solid #070707;
+  border: 1px solid #7c7c7c;
   font-family: 'Montserrat';
    font-size: 18px;
 }
@@ -812,6 +812,12 @@ select:focus {
   outline: none !important;
 }
 
+.recap-custom {
+  transform:scale(0.62)!important;
+  -webkit-transform:scale(0.62)!important; transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  }
+
 
 /* Change autocomplete styles in WebKit //////////////////////////*/
 
@@ -853,7 +859,7 @@ select:-webkit-autofill:focus {
 }
 
 .container-form {
- 
+ height: 100%;
 }
 
 .contactform input {
@@ -881,6 +887,16 @@ font-size: 17px;
 padding: 15px;
 }
 }
+
+@media screen and (max-width:350px) {
+
+.contactform {
+  
+  height: 650px;
+}
+}
+
+
 
 
 /*/////// WISH LIST ////////////////////////////////////*/

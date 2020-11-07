@@ -119,11 +119,11 @@ class Contact extends Component {
             </div>
 
             <Recaptcha
+                className="recap-custom"
                 sitekey={process.env.REACT_APP_RECAPTCHA}
                 render="explicit"
                 onloadCallback={this.recaptchaLoaded.bind(this)}
                 verifyCallback={this.verifyCallback.bind(this)}
-                
               />
 
           </div>
