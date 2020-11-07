@@ -4,6 +4,7 @@ import search from './Search.svg'
 import menuIco from './MenuIco.svg'
 import croix from './Croix.svg'
 import {Link} from 'react-router-dom';
+import { Twirl as Hamburger } from 'hamburger-react'
 
 
 function Header(){
@@ -79,7 +80,7 @@ function Header(){
                              Top Streams
                          </Link>
                     </li>
-                    <li className="liensNav">
+                    <li onClick={hideMenu} className="liensNav">
                         <form className="formSubmit" onSubmit={handleSubmit}>
 
                             <input required id="input-header"  placeholder="Find a stream..." value={searchInput} onChange={(e) => handleKeyPress(e)} type="text" className="inputRecherche"/>
@@ -106,14 +107,26 @@ function Header(){
                 </ul>
 
             )}
+                
+            </nav>   
+            <div className="menuResBtn">
+            <Hamburger 
+            onToggle={toggled => {
+                if (toggled) {
+                    toggleNavRes();
+                } else {
+                   hideMenu()
+                }
+              }}
+             size={30} color="white" direction="right"/>   
+            </div>
+            
+            {/* <div className="menuResBtn">
+                <img onClick={toggleNavRes} src={!menu ? menuIco : croix} alt="icone menu responsive" className="menuIco"/>
+            </div> */}
 
-            </nav>
-
-        <div className="menuResBtn">
-            <img onClick={toggleNavRes} src={!menu ? menuIco : croix} alt="icone menu responsive" className="menuIco"/>
-        </div>
-
-        </div>
+        
+    </div>
     )
 }
 
