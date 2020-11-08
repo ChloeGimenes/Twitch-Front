@@ -13,6 +13,8 @@ function Header(){
     const [smallScreen, setSmallScreen] = useState(false);
     const [searchInput, setSearch] = useState('');
 
+    const [isOpen, setOpen] = useState(false)
+
     useEffect(() => {
 
 
@@ -43,8 +45,8 @@ function Header(){
 
         if(menu === true) {
             showMenu(!menu);
+            setOpen(false);
         }
-
     }
 
     const handleSubmit = (e) => {
@@ -62,13 +64,12 @@ function Header(){
             <nav className="headerTop">
                 {(menu || !smallScreen) && (
 
-          
                 <ul className="listeMenu">
 
                     <li onClick={hideMenu} className="liensNav">
-                        <Link className="lien" to="/">
-                          <img src={logo} alt="logo twitch" className="logo"/>
-                        </Link>
+                    <Link className="lien" to="/">
+                        <img src={logo} alt="logo twitch" className="logo"/>
+                    </Link>
                     </li>
                     <li onClick={hideMenu} className="liensNav">
                         <Link className="lien" to="/">
@@ -80,7 +81,7 @@ function Header(){
                              Top Streams
                          </Link>
                     </li>
-                    <li onClick={hideMenu} className="liensNav">
+                    <li  className="liensNav">
                         <form className="formSubmit" onSubmit={handleSubmit}>
 
                             <input required id="input-header"  placeholder="Find a stream..." value={searchInput} onChange={(e) => handleKeyPress(e)} type="text" className="inputRecherche"/>
@@ -92,7 +93,7 @@ function Header(){
                         }}
                         >
                             <button type="submit">
-                                <img src={search} alt="icone loupe" className="logoLoupe"/>
+                                <img onClick={hideMenu} src={search} alt="icone loupe" className="logoLoupe" />
                             </button>
                         </Link>
                         </form>   
@@ -103,29 +104,24 @@ function Header(){
                              Contact
                          </Link>
                     </li>
-
                 </ul>
 
             )}
                 
             </nav>   
             <div className="menuResBtn">
-            <Hamburger 
-            onToggle={toggled => {
-                if (toggled) {
-                    toggleNavRes();
-                } else {
-                   hideMenu()
-                }
-              }}
-             size={30} color="white" direction="right"/>   
-            </div>
-            
-            {/* <div className="menuResBtn">
-                <img onClick={toggleNavRes} src={!menu ? menuIco : croix} alt="icone menu responsive" className="menuIco"/>
-            </div> */}
+                <Hamburger rounded 
+                toggled={isOpen} toggle={setOpen}
 
-        
+                    onToggle={toggled => {
+                        if (toggled) {
+                            toggleNavRes();
+                        } else {
+                        hideMenu()
+                        }
+                    }}
+                    hideOutline={true} size={30} color="white" direction="right"/>   
+            </div>     
     </div>
     )
 }

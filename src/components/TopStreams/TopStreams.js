@@ -104,7 +104,7 @@ function TopStreams () {
                         <div className="cardBodyStream">
                             
                             <h5 className="titreCartesStream">{channel.user_name}</h5>
-                            <p className="txtStream">Jeu : {channel.gameName}</p>
+                            <p className="txtStream">Game : {channel.gameName}</p>
 
                             <p className="txtStream viewers">Viewers : {channel.viewer_count}</p>
 
@@ -114,7 +114,7 @@ function TopStreams () {
                             pathname: `/live/${channel.login}`
                         }}
                         >
-                            <div className="btnCarte">Regarder {channel.user_name}</div>
+                            <div className="btnCarte">Watch {channel.user_name}</div>
                         </Link>
 
                         </div>

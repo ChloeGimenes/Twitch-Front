@@ -57,7 +57,7 @@ function Games () {
                                     }
                                 }}
                                 >
-                                <div className="btnCarte">Regarder {game.name}</div>
+                                <div className="btnCarte">Watch {game.name}</div>
                                 </Link>
                             </div>
                     </div>

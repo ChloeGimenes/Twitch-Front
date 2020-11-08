@@ -7,9 +7,13 @@
 input,
 textarea,
 button,
+button:focus,
 select,
 img,
+div,
 a {
+  outline: 0;
+  outline: none !important;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -58,6 +62,7 @@ font-family: 'Montserrat';
   list-style-type: none;
   padding: 0 20px;
 }
+
 .liensNav:nth-child(4) {
   margin: 0 auto;
   flex-shrink: 1;
@@ -334,7 +339,7 @@ PARTIE GAMES
   background-color: #212529;
   font-size: 14px;
   line-height: 1.125;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 2px 5px;
   cursor: pointer;
 }
@@ -677,6 +682,7 @@ PARTIE RESULTATS
 .title-contact {
   font-family: 'Lobster', cursive;
   font-size: 55px;
+  margin-top: 10px;
 }
 
 .logo3 {

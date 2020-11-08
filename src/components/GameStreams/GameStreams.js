@@ -83,7 +83,7 @@ return (
         
         <h1 className="titreGamesStreams">Streams : {slug}</h1>
         <h3 className="sousTitreGameStreams">
-            <strong className="textColored">{viewers}</strong> personnes regardent {slug}
+            <strong className="textColored">{viewers}</strong> people are watching {slug}
         </h3>
 
         <div className="flexAccueil">
@@ -97,7 +97,7 @@ return (
                     <div className="cardBodyGameStreams">
 
                     <h5 className="titreCartesStream">{stream.user_name}</h5>
-                    <p className="txtStream">Nombre de viewers : {stream.viewer_count}</p>
+                    <p className="txtStream">Number of viewers : {stream.viewer_count}</p>
 
                     <Link
                     className="lien"
