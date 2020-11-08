@@ -198,6 +198,14 @@ margin-right: 45px;
     display: block!important;
     z-index: 1000;
   }
+
+  .inputRecherche {
+    height: 40px;
+  }
+
+  .button-logo {
+    height: 44px;
+  }
 }
 
 /*/////////////////////////////////////////

@@ -92,7 +92,7 @@ function Header(){
                             pathname: `/results/${searchInput}`
                         }}
                         >
-                            <button type="submit">
+                            <button className="button-logo" type="submit">
                                 <img onClick={hideMenu} src={search} alt="icone loupe" className="logoLoupe" />
                             </button>
                         </Link>
